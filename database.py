@@ -13,7 +13,7 @@ host = os.getenv('HOST')
 port = os.getenv('PORT')
 
 try:
-    loader = CSVLoader(r"E:\Projects\Treeleaf_Internship\dataset.csv", encoding='unicode_escape')
+    loader = CSVLoader(r"E:\Projects\Bank_Assistant\dataset.csv", encoding='unicode_escape')
     docs = loader.load()
     logging.info("Documents loaded successfully.")
 
