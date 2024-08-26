@@ -1,20 +1,27 @@
 from general_chain import general_func
 from classification import classification_query
-import logging
 
-logging.basicConfig(level=logging.INFO)
+# Memory to keep track of previous queries and responses
+memory = []
 
 def process_query(query):
-    try:
-        intent = classification_query(query)
-        
-        if intent in ['Location', '<Location>']:
-            logging.info(f"Location intent detected: {intent}")
-            return "The bank is located in Basundhara."
-        
-        result = general_func(query)
-        return result
+    global memory
+
+    # Check if the intent is specific
+    intent = classification_query(query)
+    if intent in ['Location', '<Location>']:
+        print(f"The intent is ============>", intent)
     
-    except Exception as e:
-        logging.error(f"An error occurred: {e}")
-        return "Sorry, I couldn't process your request."
+    # Add the current query to memory
+    memory.append({"query": query})
+    
+    # Combine the previous memory context with the current query
+    context = ' '.join([item["query"] for item in memory])
+    
+    # Generate a response based on the combined context
+    result = general_func(context)
+    
+    # Store the result in memory
+    memory[-1]["response"] = result
+    
+    return result
