@@ -2,7 +2,7 @@
 Follow on 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/debendra-bakhati/)
 
-# PDF Chatbot
+# Bank Assistant
 
 This is a FastAPI application that serves as an intelligent assistant for handling banking-related queries. The application utilizes Google Generative AI for generating conversational responses and a Chroma vector store for retrieving relevant information from a dataset.
 
