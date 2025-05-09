@@ -52,3 +52,8 @@ To run the application, use the following command:
 ```bash
 python main.py
 ```
+
+
+
+main.py --> process_query.py --> general_query.py (use of chain also see the similarity search between query and the vector store) --> database.py (create CHROMA vector store)
+                              --> classification_query.py ( use of chain for response using query) 
